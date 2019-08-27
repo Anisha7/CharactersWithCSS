@@ -22,6 +22,22 @@ body {
     right: 20px;
 }
 
+/* ice cream cloud */
+.scoop-cloud {
+    z-index: 4;
+    position: relative;
+    display: inline-flex;
+    bottom: 20px;
+}
+
+.cloud {
+    width: 50px;
+    height: 50px;
+    background: antiquewhite;
+    border-radius: 50%;
+}
+
+/* Cone and its lines */
 .cone {
     width: 0px;
     border-top: 200px solid brown;
@@ -31,7 +47,52 @@ body {
     z-index: 1; /* display above scoop */
 }
 
+.cone .line-left {
+    width: 112px;
+    height: 47px;
+    border-bottom: 0.2px solid #ed7d7d;
+    -webkit-transform: translateY(20px) translateX(5px) rotate(-26deg);
+    transform: translateY(20px) translateX(5px) rotate(-26deg);
+    position: relative;
+    bottom: 214px;
+    right: 71px;
+}
 
+.cone .l-two {
+    width: 100px;
+    left: -56px;
+    bottom: 219px;
+}
+
+.cone .l-three {
+    width: 71px;
+    left: -37px;
+    bottom: 223px;
+}
+
+.cone .line-right {
+    width: 112px;
+    height: 47px;
+    border-bottom: 0.2px solid #ed7d7d;
+    -webkit-transform: translateY(20px) translateX(5px) rotate(26deg);
+    transform: translateY(20px) translateX(5px) rotate(26deg);
+    position: relative;
+    bottom: 370px;
+    right: 46px;
+}
+
+.cone .r-two {
+    width: 100px;
+    left: -54px;
+}
+
+.cone .r-three {
+    width: 51px;
+    left: -22px;
+    bottom: 355px;
+}
+
+/* Top thick border of cone */
 .cone-coat {
     margin: 0 auto;
     width: 193px;
@@ -58,6 +119,7 @@ body {
     clip-path: ellipse(50% 50% at 50% 100%);
 }
 
+/* Bite with individual positions */
 .bite {
     width: 50px;
     height: 50px;
@@ -66,7 +128,6 @@ body {
     position: relative;
 }
 
-/* Individual bite positions */
 .scoop .one {
     left: 10px;
 }
@@ -79,19 +140,4 @@ body {
 .scoop .three {
     bottom: 51px;
     right: 16px;
-}
-
-/* ice cream cloud */
-.scoop-cloud {
-    z-index: 4;
-    position: relative;
-    display: inline-flex;
-    bottom: 20px;
-}
-
-.cloud {
-    width: 50px;
-    height: 50px;
-    background: antiquewhite;
-    border-radius: 50%;
 }
