@@ -1,0 +1,55 @@
+body {
+    background-color: #FF8080;
+    width: 100%;
+    height: 100%;
+}
+
+/* The div that holds happy-icecream */
+.happy-icecream {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    right: 50%;
+}
+
+.scoop {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: antiquewhite;
+    position: relative;
+    top: 30px;
+    right: 20px;
+}
+
+.cone {
+    width: 0px;
+    border-top: 200px solid brown;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    position: fixed;
+    z-index: 1; /* display above scoop */
+}
+
+
+.cone-coat {
+    margin: 0 auto;
+    width: 250px;
+    height: 100px;
+    background-color: lightblue;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .cone-coat:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -5%;
+    left: -5%;
+    height: 120px;
+    background: transparent;
+    -webkit-clip-path: ellipse(50% 60% at 50% 100%);
+    clip-path: ellipse(50% 60% at 50% 100%);
+  }
