@@ -36,13 +36,14 @@ body {
     margin: 0 auto;
     width: 193px;
     height: 38px;
-    background-color: lightblue;
+    background-color: brown;
     position: relative;
     overflow: hidden;
     border-radius: 70%;
     top: 31px;
     right: 17px;
     z-index: 2;
+    border-bottom: 1px solid #ed7d7d;
 }
   
 .cone-coat:after {
@@ -66,16 +67,31 @@ body {
 }
 
 /* Individual bite positions */
-.one {
+.scoop .one {
     left: 10px;
 }
 
-.two {
+.scoop .two {
     right: -4px;
     bottom: 20px;
 }
 
-.three {
+.scoop .three {
     bottom: 51px;
     right: 16px;
+}
+
+/* ice cream cloud */
+.scoop-cloud {
+    z-index: 4;
+    position: relative;
+    display: inline-flex;
+    bottom: 20px;
+}
+
+.cloud {
+    width: 50px;
+    height: 50px;
+    background: antiquewhite;
+    border-radius: 50%;
 }
