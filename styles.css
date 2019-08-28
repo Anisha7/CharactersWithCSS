@@ -189,12 +189,13 @@ body {
 .cone .line-left {
     width: 112px;
     height: 47px;
-    border-bottom: 0.2px solid #ed7d7d;
+    border-bottom: 0.5px solid #ed7d7d;
     -webkit-transform: translateY(20px) translateX(5px) rotate(-26deg);
     transform: translateY(20px) translateX(5px) rotate(-26deg);
     position: relative;
     bottom: 214px;
     right: 71px;
+    box-shadow: 0px 1px 0px rgb(105, 27, 27);
 }
 
 .cone .l-two {
@@ -212,12 +213,13 @@ body {
 .cone .line-right {
     width: 112px;
     height: 47px;
-    border-bottom: 0.2px solid #ed7d7d;
+    border-bottom: 0.5px solid #ed7d7d;
     -webkit-transform: translateY(20px) translateX(5px) rotate(26deg);
     transform: translateY(20px) translateX(5px) rotate(26deg);
     position: relative;
     bottom: 370px;
     right: 46px;
+    box-shadow: 0px 1px 0px rgb(105, 27, 27);
 }
 
 .cone .r-two {
