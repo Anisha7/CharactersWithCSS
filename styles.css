@@ -23,6 +23,7 @@ body {
     position: relative;
     top: 75px;
     right: 20px;
+    box-shadow: 4px 0px 0px #eebe7f;
 }
 
 /* Ice cream happy face */
@@ -44,12 +45,12 @@ body {
     position: absolute;
     border: 0 solid transparent;
     border-top: 3px solid black;
-    border-radius: 19px 19px 4px 4px;
-    top: -158px;
-    left: 26px;
-    width: 42px;
+    border-radius: 19px 19px 0px 1px;
+    top: -156px;
+    left: 31px;
+    width: 31px;
     height: 20px;
-    transform: rotate(-16deg);
+    transform: rotate(-9deg);
 }
 
 .brows .right-brow {
@@ -71,6 +72,7 @@ body {
     border-radius: 50%;
     position: relative;
     right: -2px;
+    box-shadow: 1px 1px 0px 0px #e6d4b7;
 }
 
 .eyes .right-eye {
@@ -89,6 +91,26 @@ body {
 
 .left-eye .eyeball {
     right: -5px;
+}
+
+.smile {
+    position: relative;
+    width: 0;
+    height: 0;
+    z-index: 10
+}
+
+.smile::after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 3px solid black;
+    border-radius: 16px 16px 0px 0px;
+    top: -144px;
+    left: 78px;
+    width: 36px;
+    height: 20px;
+    transform: rotate(180deg);
 }
 
 /* Cherry on scoop */
@@ -137,6 +159,11 @@ body {
     height: 50px;
     background: antiquewhite;
     border-radius: 50%;
+    box-shadow: 2px 4px 0px #eebe7f;
+}
+
+.scoop-cloud .four {
+    box-shadow: 4px 0px 0px #eebe7f;
 }
 
 /* Cone and its lines */
@@ -147,6 +174,16 @@ body {
     border-right: 80px solid transparent;
     position: fixed;
     z-index: 1; /* display above scoop */
+}
+
+.cone-shadow {
+    width: 0px;
+    border-top: 200px solid rgb(105, 27, 27);
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    position: fixed;
+    z-index: -2;
+    margin-left: 4px;
 }
 
 .cone .line-left {
@@ -206,6 +243,7 @@ body {
     right: 17px;
     z-index: 2;
     border-bottom: 1px solid #ed7d7d;
+    box-shadow: 7px 5px 0px -3px #7b0505;
 }
   
 .cone-coat:after {
@@ -231,14 +269,17 @@ body {
 
 .scoop .one {
     left: 10px;
+    box-shadow: 7px 2px 0px -3px #eebe7f;
 }
 
 .scoop .two {
     right: -4px;
     bottom: 20px;
+    box-shadow: 7px 4px 0px -3px #eebe7f;
 }
 
 .scoop .three {
     bottom: 51px;
     right: 16px;
+    box-shadow: 4px 7px 0px -4px #eebe7f;
 }
