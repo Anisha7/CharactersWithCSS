@@ -133,14 +133,25 @@ body {
     transform: rotate(10deg);
 }
 
+.cherry-stem-shadow {
+    width: 10px;
+    height: 10px;
+    background: #930808;
+    border-radius: 50%;
+    box-shadow: 2px 1px 2px 2px rgb(134, 33, 33);
+    position: relative;
+    top: 21%;
+    left: 28%;
+}
+
 .cherry-stem:after {
     content: "";
     position: absolute;
     border: 0 solid transparent;
     border-top: 3px solid black;
     border-radius: 20px 0 0 0;
-    top: -12px;
-    left: -14px;
+    top: -18px;
+    left: -19px;
     width: 42px;
     height: 20px;
     transform: rotate(53deg);
