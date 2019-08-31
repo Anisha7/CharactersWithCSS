@@ -1,14 +1,56 @@
-/* TODO: Add variables for colors */
+
+/*************** Variables ***************/
+
+:root {
+    --bg-color-green: #96CEB4;
+    --bg-color-yellow: #FFEDAE;
+    --bg-color-pink: #FF8080;
+    --bg-color-orange: #FFCB5C;
+    --bg-color-blue: #88D8B0;
+    /* ice cream */
+    --icecream-color-vanilla: antiquewhite;
+    --icecream-shadow-color-vanilla: #eebe7f;
+    --icecream-color-strawberry: #E84375;
+    --icecream-shadow-color-strawberry: #DD295F;
+    --icecream-color-blue: #65D0DF;
+    --icecream-color-chocolate: #632C32;
+    --icecream-color-brown: #B16938;
+    /* eyes */
+    --eyes-bg-color: white;
+    --eyes-shadow-color:  #e6d4b7;
+    --eyeball-bg-color: black;
+    /* cherry */
+}
+
+/*************** Animations ***************/
+@keyframes alternateBgColors {
+    0% {background-color: var(--bg-color-pink)}
+    20% {background-color: var(--bg-color-orange)}
+    40% {background-color: var(--bg-color-blue)}
+    60% {background-color: var(--bg-color-green)}
+    80% {background-color: var(--bg-color-yellow)}
+}
+
+@keyframes alternateIcecreamColors {
+    0% {background-color: var(--icecream-color-vanilla)}
+    20% {background-color: var(--icecream-color-blue)}
+    40% {background-color: var(--icecream-color-chocolate)}
+    60% {background-color: var(--icecream-color-strawberry)}
+    80% {background-color: var(--icecream-color-brown)}
+}
+
+/*************** Styles ***************/
 
 body {
-    background-color: #FF8080;
-    /* background-color: #FED766; */
+    background-color: var(--bg-color-pink);
     width: 100%;
     height: 100%;
+    animation: alternateBgColors 10s infinite;
 }
 
 /* The div that holds happy-icecream */
 .happy-icecream {
+    --prop: 30px;
     position: absolute;
     top: 15%;
     left: 45%;
@@ -19,11 +61,12 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: antiquewhite;
+    background-color: var(--icecream-color-vanilla);
     position: relative;
     top: 75px;
     right: 20px;
-    box-shadow: 4px 0px 0px #eebe7f;
+    box-shadow: 4px 0px 0px var(--icecream-shadow-color-vanilla);
+    animation: alternateIcecreamColors 10s infinite;
 }
 
 /* Ice cream happy face */
@@ -68,11 +111,11 @@ body {
 .eyes .eye {
     width: 46px;
     height: 42px;
-    background: white;
+    background: var(--eyes-bg-color);
     border-radius: 50%;
     position: relative;
     right: -2px;
-    box-shadow: 1px 1px 0px 0px #e6d4b7;
+    box-shadow: 1px 1px 0px 0px var(--eyes-shadow-color);
 }
 
 .eyes .right-eye {
@@ -82,7 +125,7 @@ body {
 .eyeball {
     width: 12px;
     height: 12px;
-    background: black;
+    background: var(--eyeball-bg-color);
     border-radius: 50%;
     position: relative;
     right: 34px;
@@ -168,13 +211,14 @@ body {
 .cloud {
     width: 50px;
     height: 50px;
-    background: antiquewhite;
+    background: var(--icecream-color-vanilla);
     border-radius: 50%;
-    box-shadow: 2px 4px 0px #eebe7f;
+    box-shadow: 2px 4px 0px #eebe7f ;
+    animation: alternateIcecreamColors 10s infinite;
 }
 
 .scoop-cloud .four {
-    box-shadow: 4px 0px 0px #eebe7f;
+    box-shadow: 4px 0px 0px #eebe7f ;
 }
 
 /* Cone and its lines */
@@ -275,9 +319,10 @@ body {
 .bite {
     width: 50px;
     height: 50px;
-    background: #FF8080;
+    background-color: #FF8080;
     border-radius: 50%;
     position: relative;
+    animation: alternateBgColors 10s infinite;
 }
 
 .scoop .one {
