@@ -14,7 +14,7 @@
     --icecream-shadow-color-strawberry: #DD295F;
     --icecream-color-blue: #65D0DF;
     --icecream-color-chocolate: #632C32;
-    --icecream-color-brown: #B16938;
+    --icecream-color-green: #D3ED88;
     /* eyes */
     --eyes-bg-color: white;
     --eyes-shadow-color:  #e6d4b7;
@@ -34,9 +34,31 @@
 @keyframes alternateIcecreamColors {
     0% {background-color: var(--icecream-color-vanilla)}
     20% {background-color: var(--icecream-color-blue)}
-    40% {background-color: var(--icecream-color-chocolate)}
-    60% {background-color: var(--icecream-color-strawberry)}
-    80% {background-color: var(--icecream-color-brown)}
+    40% {background-color: var(--icecream-color-green)}
+    60% {background-color: var(--icecream-color-chocolate)}
+    80% {background-color: var(--icecream-color-strawberry)}
+}
+
+@keyframes eyeroll {
+    0% {transform: translate(0px, 0px)}
+    20% {transform: translate(10px, -2px)}
+    40% {transform: translate(27px, 10px);}
+    60% {transform: translate(15px, 23px);}
+    80% {transform: translate(0px, 23px);}
+}
+
+@keyframes icecreamDrip {
+    0% {transform: translateY(0px)}
+    50% {transform:  translateY(100px) scaleX(1.5)}
+    100% {transform: translateY(200px) scaleX(1.75)}
+}
+
+.scoop-cloud:hover > .four {
+    transform: translateY(250px) scaleX(2.5) skew(-15deg, -10deg);
+}
+
+.cherry:hover {
+    transform: scaleX(-1);
 }
 
 /*************** Styles ***************/
@@ -130,7 +152,13 @@ body {
     position: relative;
     right: 34px;
     top: 0px;
+    animation: eyeroll 1s infinite linear;
 }
+
+/* Animate eyeroll when hover on scoop */
+/* .scoop:hover > .eyeball {
+    animation: eyeroll 1s infinite linear;
+} */
 
 .left-eye .eyeball {
     right: -5px;
@@ -219,6 +247,8 @@ body {
 
 .scoop-cloud .four {
     box-shadow: 4px 0px 0px #eebe7f ;
+    transition: 600ms;
+    /* animation: icecreamDrip 10s; */
 }
 
 /* Cone and its lines */
