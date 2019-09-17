@@ -1,0 +1,368 @@
+// bg
+$bg-color-green: #96CEB4;
+$bg-color-yellow: #FFEDAE;
+$bg-color-pink: #FF8080;
+$bg-color-orange: #FFCB5C;
+$bg-color-blue: #88D8B0;
+// ice cream
+$icecream-color-vanilla: antiquewhite;
+$icecream-shadow-color-vanilla: #eebe7f;
+$icecream-color-strawberry: #E84375;
+$icecream-shadow-color-strawberry: #DD295F;
+$icecream-color-blue: #65D0DF;
+$icecream-color-chocolate: #632C32;
+$icecream-color-green: #D3ED88;
+// eyes
+$eyes-bg-color: white;
+$eyes-shadow-color:  #e6d4b7;
+$eyeball-bg-color: black;
+
+// *************** Animations ***************/
+@keyframes alternateBgColors {
+    0% {background-color: $bg-color-pink}
+    20% {background-color: $bg-color-orange}
+    40% {background-color: $bg-color-blue}
+    60% {background-color: $bg-color-green}
+    80% {background-color: $bg-color-yellow}
+}
+
+@keyframes alternateIcecreamColors {
+    0% {background-color: $icecream-color-vanilla}
+    20% {background-color: $icecream-color-blue}
+    40% {background-color: $icecream-color-green}
+    60% {background-color: $icecream-color-chocolate}
+    80% {background-color: $icecream-color-strawberry}
+}
+
+@keyframes eyeroll {
+    0% {transform: translate(0px, 0px)}
+    20% {transform: translate(10px, -2px)}
+    40% {transform: translate(27px, 10px)}
+    60% {transform: translate(15px, 23px)}
+    80% {transform: translate(0px, 23px)}
+}
+
+@keyframes icecreamDrip {
+    0% {transform: translateY(0px)}
+    50% {transform: translateY(100px) scaleX(1.5)}
+    100% {transform: translateY(200px) scaleX(1.75)}
+}
+
+.scoop-cloud:hover > .four {
+    transform: translateY(250px) scaleX(2.5) skew(-15deg, -10deg);
+}
+
+.cherry:hover {
+    transform: scaleX(-1);
+}
+
+// *************** Styles ***************/
+
+body {
+    background-color: $bg-color-pink;
+    width: 100%;
+    height: 100%;
+    animation: alternateBgColors 10s infinite;
+}
+
+/* The div that holds happy-icecream */
+.happy-icecream {
+    --prop: 30px;
+    position: absolute;
+    top: 15%;
+    left: 45%;
+    right: 50%;
+}
+
+.scoop {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: $icecream-color-vanilla;
+    position: relative;
+    top: 75px;
+    right: 20px;
+    box-shadow: 4px 0px 0px $icecream-shadow-color-vanilla;
+    animation: alternateIcecreamColors 10s infinite;
+}
+
+/* Ice cream happy face */
+.brows {
+    display: inline-flex;
+    position: relative;
+    bottom: 56px;
+}
+
+.brows .brow {
+    position: relative;
+    width: 0;
+    height: 0;
+    transform: rotate(10deg);
+}
+
+.brows .brow::after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 3px solid black;
+    border-radius: 19px 19px 0px 1px;
+    top: -156px;
+    left: 31px;
+    width: 31px;
+    height: 20px;
+    transform: rotate(-9deg);
+}
+
+.brows .right-brow {
+    left: 52px;
+}
+
+.eyes {
+    display: inline-flex;
+    z-index: 8;
+    position: relative;
+    bottom: 140px;
+    left: 46px;
+}
+
+.eyes .eye {
+    width: 46px;
+    height: 42px;
+    background: $eyes-bg-color;
+    border-radius: 50%;
+    position: relative;
+    right: -2px;
+    box-shadow: 1px 1px 0px 0px $eyes-shadow-color;
+}
+
+.eyes .right-eye {
+    left: 5px;
+}
+
+.eyeball {
+    width: 12px;
+    height: 12px;
+    background: $eyeball-bg-color;
+    border-radius: 50%;
+    position: relative;
+    right: 34px;
+    top: 0px;
+    animation: eyeroll 1s infinite linear;
+}
+
+// * Animate eyeroll when hover on scoop */
+//* .scoop:hover > .eyeball {
+//    animation: eyeroll 1s infinite linear;
+// } */
+
+.left-eye .eyeball {
+    right: -5px;
+}
+
+.smile {
+    position: relative;
+    width: 0;
+    height: 0;
+    z-index: 10
+}
+
+.smile::after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 3px solid black;
+    border-radius: 16px 16px 0px 0px;
+    top: -144px;
+    left: 78px;
+    width: 36px;
+    height: 20px;
+    transform: rotate(180deg);
+}
+
+//* Cherry on scoop */
+.cherry {
+    width: 57px;
+    height: 55px;
+    background: red;
+    border-radius: 50%;
+    z-index: 5;
+    position: relative;
+    left: 50px;
+    top: 97px;
+    box-shadow: 0px 3px 1px darkred;
+}
+
+.cherry-stem {
+    position: relative;
+    width: 0;
+    height: 0;
+    transform: rotate(10deg);
+}
+
+.cherry-stem-shadow {
+    width: 10px;
+    height: 10px;
+    background: #930808;
+    border-radius: 50%;
+    box-shadow: 2px 1px 2px 2px rgb(134, 33, 33);
+    position: relative;
+    top: 21%;
+    left: 28%;
+}
+
+.cherry-stem:after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 3px solid black;
+    border-radius: 20px 0 0 0;
+    top: -18px;
+    left: -19px;
+    width: 42px;
+    height: 20px;
+    transform: rotate(53deg);
+}
+
+//* ice cream cloud */
+.scoop-cloud {
+    z-index: 4;
+    position: relative;
+    display: inline-flex;
+    bottom: 20px;
+}
+
+.cloud {
+    width: 50px;
+    height: 50px;
+    background: $icecream-color-vanilla;
+    border-radius: 50%;
+    box-shadow: 2px 4px 0px #eebe7f ;
+    animation: alternateIcecreamColors 10s infinite;
+}
+
+.scoop-cloud .four {
+    box-shadow: 4px 0px 0px #eebe7f ;
+    transition: 600ms;
+    /* animation: icecreamDrip 10s; */
+}
+
+//* Cone and its lines */
+.cone {
+    width: 0px;
+    border-top: 200px solid brown;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    position: fixed;
+    z-index: 1; /* display above scoop */
+}
+
+.cone-shadow {
+    width: 0px;
+    border-top: 200px solid rgb(105, 27, 27);
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    position: fixed;
+    z-index: -2;
+    margin-left: 4px;
+}
+
+.cone .line-left {
+    width: 112px;
+    height: 47px;
+    border-bottom: 0.5px solid #ed7d7d;
+    -webkit-transform: translateY(20px) translateX(5px) rotate(-26deg);
+    transform: translateY(20px) translateX(5px) rotate(-26deg);
+    position: relative;
+    bottom: 214px;
+    right: 71px;
+    box-shadow: 0px 1px 0px rgb(105, 27, 27);
+}
+
+.cone .l-two {
+    width: 100px;
+    left: -56px;
+    bottom: 219px;
+}
+
+.cone .l-three {
+    width: 57px;
+    left: -38px;
+    bottom: 223px;
+}
+
+.cone .line-right {
+    width: 112px;
+    height: 47px;
+    border-bottom: 0.5px solid #ed7d7d;
+    -webkit-transform: translateY(20px) translateX(5px) rotate(26deg);
+    transform: translateY(20px) translateX(5px) rotate(26deg);
+    position: relative;
+    bottom: 370px;
+    right: 46px;
+    box-shadow: 0px 1px 0px rgb(105, 27, 27);
+}
+
+.cone .r-two {
+    width: 100px;
+    left: -54px;
+}
+
+.cone .r-three {
+    width: 51px;
+    left: -22px;
+    bottom: 355px;
+}
+
+//* Top thick border of cone */
+.cone-coat {
+    margin: 0 auto;
+    width: 193px;
+    height: 38px;
+    background-color: brown;
+    position: relative;
+    border-radius: 70%;
+    top: 31px;
+    right: 17px;
+    z-index: 2;
+    border-bottom: 1px solid #ed7d7d;
+    box-shadow: 7px 5px 0px -3px #7b0505;
+}
+  
+.cone-coat:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -5%;
+    left: -5%;
+    height: 120px;
+    background: transparent;
+    -webkit-clip-path: ellipse(50% 60% at 50% 100%);
+    clip-path: ellipse(50% 50% at 50% 100%);
+}
+
+//* Bite with individual positions */
+.bite {
+    width: 50px;
+    height: 50px;
+    background-color: #FF8080;
+    border-radius: 50%;
+    position: relative;
+    animation: alternateBgColors 10s infinite;
+}
+
+.scoop .one {
+    left: 10px;
+    box-shadow: 7px 2px 0px -3px #eebe7f;
+}
+
+.scoop .two {
+    right: -4px;
+    bottom: 20px;
+    box-shadow: 7px 4px 0px -3px #eebe7f;
+}
+
+.scoop .three {
+    bottom: 51px;
+    right: 16px;
+    box-shadow: 4px 7px 0px -4px #eebe7f;
+}
